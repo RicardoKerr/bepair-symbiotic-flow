@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { ChevronLeft, ChevronRight, ExternalLink, MessageCircle, Target, Brain, TrendingUp, Users, Zap, BarChart3 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -28,7 +27,7 @@ const Index = () => {
 
   const cardSets: CardSet[] = [
     {
-      title: "💡 Cansou de perde cliente?",
+      title: "💡 Cansou de perder cliente?",
       color: "bg-gradient-to-br from-red-50 to-orange-50 border-red-200",
       icon: Target,
       cards: [
