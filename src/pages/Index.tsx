@@ -246,14 +246,12 @@ const Index = () => {
       {/* Header */}
       <header className="bg-white/80 backdrop-blur-sm border-b sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-3">
-              <img 
-                src="/lovable-uploads/48a7e0bf-e856-4456-b94e-0998ce1a3da9.png" 
-                alt="BePair Logo" 
-                className="h-12 w-auto"
-              />
-            </div>
+          <div className="flex items-center justify-center space-x-3">
+            <img 
+              src="/lovable-uploads/48a7e0bf-e856-4456-b94e-0998ce1a3da9.png" 
+              alt="BePair Logo" 
+              className="h-12 w-auto"
+            />
             <div className="text-sm text-gray-500">
               IA que transforma relacionamento com clientes
             </div>
