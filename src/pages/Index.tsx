@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { ChevronLeft, ChevronRight, ExternalLink, MessageCircle, Target, Brain, TrendingUp, Users, Zap, BarChart3 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -188,8 +187,10 @@ const Index = () => {
           description: "Esperamos que você tenha entendido o potencial da BePair para transformar o relacionamento com seus clientes. Se quiser conversar, testar mais recursos ou levar essa inteligência para sua empresa, é só chamar!",
           emoji: "🙏",
           hasButton: true,
-          buttonText: "Fale Conosco no WhatsApp",
-          buttonLink: "https://wa.me/5521987162377?text=Olá%21%20Te%20conheci%20na%20Campus%20Party%20Brasília%20%2D%20Startup%20BePair"
+          buttonText: "Fale Conosco",
+          buttonLink: "https://wa.me/5521987162377?text=Olá%21%20Te%20conheci%20na%20Campus%20Party%20Brasília%20%2D%20Startup%20BePair",
+          hasWhatsAppIcon: true,
+          hasEmail: true
         }
       ]
     }
@@ -288,21 +289,32 @@ const Index = () => {
                 </p>
                 
                 {currentCardData.hasButton && (
-                  <Button
-                    asChild
-                    size="lg"
-                    className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105"
-                  >
-                    <a 
-                      href={currentCardData.buttonLink} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center space-x-2"
+                  <div className="space-y-4">
+                    <Button
+                      asChild
+                      size="lg"
+                      className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105"
                     >
-                      <span>{currentCardData.buttonText}</span>
-                      <ExternalLink className="w-4 h-4" />
-                    </a>
-                  </Button>
+                      <a 
+                        href={currentCardData.buttonLink} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center space-x-2"
+                      >
+                        {currentCardData.hasWhatsAppIcon && (
+                          <MessageCircle className="w-5 h-5" />
+                        )}
+                        <span>{currentCardData.buttonText}</span>
+                        <ExternalLink className="w-4 h-4" />
+                      </a>
+                    </Button>
+                    
+                    {currentCardData.hasEmail && (
+                      <div className="text-sm text-gray-600 mt-4">
+                        ✉️ Envie suas dúvidas: contact.bepair@gmail.com
+                      </div>
+                    )}
+                  </div>
                 )}
               </div>
             </CardContent>
