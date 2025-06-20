@@ -12,6 +12,7 @@ interface CardData {
   buttonLink?: string;
   hasWhatsAppIcon?: boolean;
   hasEmail?: boolean;
+  hasContactButtons?: boolean;
 }
 
 interface CardSet {
@@ -204,11 +205,7 @@ const Index = () => {
           title: "Obrigado pela visita!",
           description: "Esperamos que você tenha entendido o potencial da BePair para transformar o relacionamento com seus clientes. Se quiser conversar, testar mais recursos ou levar essa inteligência para sua empresa, é só chamar!",
           emoji: "🙏",
-          hasButton: true,
-          buttonText: "Fale Conosco",
-          buttonLink: "https://wa.me/5521987162377?text=Olá%21%20Te%20conheci%20na%20Campus%20Party%20Brasília%20%2D%20Startup%20BePair",
-          hasWhatsAppIcon: true,
-          hasEmail: true
+          hasContactButtons: true
         }
       ]
     }
@@ -304,44 +301,57 @@ const Index = () => {
                 </p>
                 
                 {currentCardData.hasButton && (
-                  <div className="space-y-4">
+                  <Button
+                    asChild
+                    size="lg"
+                    className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105"
+                  >
+                    <a 
+                      href={currentCardData.buttonLink} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center space-x-2"
+                    >
+                      {currentCardData.hasWhatsAppIcon && (
+                        <MessageCircle className="w-5 h-5" />
+                      )}
+                      <span>{currentCardData.buttonText}</span>
+                      <ExternalLink className="w-4 h-4" />
+                    </a>
+                  </Button>
+                )}
+
+                {currentCardData.hasContactButtons && (
+                  <div className="flex justify-center space-x-4">
                     <Button
                       asChild
                       size="lg"
-                      className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105"
+                      className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105"
                     >
                       <a 
-                        href={currentCardData.buttonLink} 
-                        target="_blank" 
+                        href="https://wa.me/5521987162377?text=Olá%21%20Te%20conheci%20na%20Campus%20Party%20Brasília%20%2D%20Startup%20BePair"
+                        target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center space-x-2"
                       >
-                        {currentCardData.hasWhatsAppIcon && (
-                          <MessageCircle className="w-5 h-5" />
-                        )}
-                        <span>{currentCardData.buttonText}</span>
-                        <ExternalLink className="w-4 h-4" />
+                        <MessageCircle className="w-5 h-5" />
+                        <span>WhatsApp</span>
                       </a>
                     </Button>
                     
-                    {currentCardData.hasEmail && (
-                      <div className="mt-4">
-                        <Button
-                          asChild
-                          size="lg"
-                          variant="outline"
-                          className="border-gray-300 hover:bg-gray-50 px-8 py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105"
-                        >
-                          <a 
-                            href="mailto:contact.bepair@gmail.com"
-                            className="inline-flex items-center space-x-2"
-                          >
-                            <Mail className="w-5 h-5" />
-                            <span>Envie suas dúvidas</span>
-                          </a>
-                        </Button>
-                      </div>
-                    )}
+                    <Button
+                      asChild
+                      size="lg"
+                      className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105"
+                    >
+                      <a 
+                        href="mailto:contact.bepair@gmail.com"
+                        className="inline-flex items-center space-x-2"
+                      >
+                        <Mail className="w-5 h-5" />
+                        <span>Fale Conosco</span>
+                      </a>
+                    </Button>
                   </div>
                 )}
               </div>
