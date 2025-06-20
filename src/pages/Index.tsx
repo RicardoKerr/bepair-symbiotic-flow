@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { ChevronLeft, ChevronRight, ExternalLink, MessageCircle, Target, Brain, TrendingUp, Users, Zap, BarChart3, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -326,8 +325,21 @@ const Index = () => {
                     </Button>
                     
                     {currentCardData.hasEmail && (
-                      <div className="text-sm text-gray-600 mt-4">
-                        ✉️ Envie suas dúvidas: contact.bepair@gmail.com
+                      <div className="mt-4">
+                        <Button
+                          asChild
+                          size="lg"
+                          variant="outline"
+                          className="border-gray-300 hover:bg-gray-50 px-8 py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105"
+                        >
+                          <a 
+                            href="mailto:contact.bepair@gmail.com"
+                            className="inline-flex items-center space-x-2"
+                          >
+                            <Mail className="w-5 h-5" />
+                            <span>Envie suas dúvidas</span>
+                          </a>
+                        </Button>
                       </div>
                     )}
                   </div>
