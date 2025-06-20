@@ -27,7 +27,7 @@ const Index = () => {
 
   const cardSets: CardSet[] = [
     {
-      title: "💡 Cansou de perder cliente?",
+      title: "💡 Cansou de perder clientes?",
       color: "bg-gradient-to-br from-red-50 to-orange-50 border-red-200",
       icon: Target,
       cards: [
