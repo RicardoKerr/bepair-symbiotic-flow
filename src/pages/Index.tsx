@@ -387,26 +387,36 @@ const Index = () => {
               className="h-8 w-auto"
             />
           </div>
-          <p className="text-gray-600 mb-4">
+          <p className="text-gray-600 mb-6">
             Transformando relacionamento com clientes através de Personas de IA
           </p>
-          <div className="flex items-center justify-center space-x-6">
-            <a 
-              href="https://wa.me/5521987162377?text=Olá%21%20Te%20conheci%20na%20Campus%20Party%20Brasília%20%2D%20Startup%20BePair"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center space-x-2 text-green-600 hover:text-green-700 transition-colors"
+          <div className="flex items-center justify-center space-x-4">
+            <Button
+              asChild
+              className="bg-green-600 hover:bg-green-700 text-white"
             >
-              <MessageCircle className="w-5 h-5" />
-              <span>WhatsApp</span>
-            </a>
-            <a 
-              href="mailto:contact.bepair@gmail.com"
-              className="flex items-center space-x-2 text-blue-600 hover:text-blue-700 transition-colors"
+              <a 
+                href="https://wa.me/5521987162377?text=Olá%21%20Te%20conheci%20na%20Campus%20Party%20Brasília%20%2D%20Startup%20BePair"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-2"
+              >
+                <MessageCircle className="w-4 h-4" />
+                <span>WhatsApp</span>
+              </a>
+            </Button>
+            <Button
+              asChild
+              className="bg-blue-600 hover:bg-blue-700 text-white"
             >
-              <Mail className="w-5 h-5" />
-              <span>Email</span>
-            </a>
+              <a 
+                href="mailto:contact.bepair@gmail.com"
+                className="flex items-center space-x-2"
+              >
+                <Mail className="w-4 h-4" />
+                <span>Fale Conosco</span>
+              </a>
+            </Button>
           </div>
         </div>
       </footer>
