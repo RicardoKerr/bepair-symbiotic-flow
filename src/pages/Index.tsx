@@ -3,11 +3,29 @@ import { ChevronLeft, ChevronRight, ExternalLink, MessageCircle, Target, Brain, 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
+interface CardData {
+  title: string;
+  description: string;
+  emoji: string;
+  hasButton?: boolean;
+  buttonText?: string;
+  buttonLink?: string;
+  hasWhatsAppIcon?: boolean;
+  hasEmail?: boolean;
+}
+
+interface CardSet {
+  title: string;
+  color: string;
+  icon: any;
+  cards: CardData[];
+}
+
 const Index = () => {
   const [currentCardSet, setCurrentCardSet] = useState(0);
   const [currentCard, setCurrentCard] = useState(0);
 
-  const cardSets = [
+  const cardSets: CardSet[] = [
     {
       title: "💡 O Problema do Marketing Tradicional",
       color: "bg-gradient-to-br from-red-50 to-orange-50 border-red-200",
@@ -230,12 +248,11 @@ const Index = () => {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
-                <span className="text-white font-bold text-lg">BP</span>
-              </div>
-              <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                BePair
-              </h1>
+              <img 
+                src="/lovable-uploads/48a7e0bf-e856-4456-b94e-0998ce1a3da9.png" 
+                alt="BePair Logo" 
+                className="h-12 w-auto"
+              />
             </div>
             <div className="text-sm text-gray-500">
               IA que transforma relacionamento com clientes
@@ -365,10 +382,11 @@ const Index = () => {
       <footer className="bg-white border-t mt-16">
         <div className="container mx-auto px-4 py-8 text-center">
           <div className="flex items-center justify-center space-x-3 mb-4">
-            <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold">BP</span>
-            </div>
-            <span className="text-xl font-bold text-gray-800">BePair</span>
+            <img 
+              src="/lovable-uploads/48a7e0bf-e856-4456-b94e-0998ce1a3da9.png" 
+              alt="BePair Logo" 
+              className="h-8 w-auto"
+            />
           </div>
           <p className="text-gray-600">
             Transformando relacionamento com clientes através de IA emocional
